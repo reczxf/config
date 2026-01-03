@@ -25,6 +25,14 @@ local opts = { noremap = true, silent = true }
 -- 键位映射
 -- vim.keymap.set('n', 'J', '<Nop>', opts)
 
+if vim.g.vscode then
+    -- 定义快捷键 'vv' 快速触发 VSCode 的智能扩展选中
+    vim.keymap.set('n', 'vv', [[<Cmd>call VSCodeNotify('editor.action.smartSelect.expand')<CR>]], { silent = true })
+    vim.keymap.set('v', 'vv', [[<Cmd>call VSCodeNotify('editor.action.smartSelect.expand')<CR>]], { silent = true })
+    
+    -- 定义快捷键 'vV' (Shift+v) 快速触发缩小选中范围
+    vim.keymap.set('v', 'vV', [[<Cmd>call VSCodeNotify('editor.action.smartSelect.shrink')<CR>]], { silent = true })
+end
 
 -- 输入法自动切换功能
 local function switch_to_english()
