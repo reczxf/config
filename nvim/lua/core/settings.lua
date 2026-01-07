@@ -12,7 +12,9 @@ local is_vscode = vim.g.vscode ~= nil
   vim.api.nvim_set_keymap('n', 'gtd', ":call VSCodeNotify('editor.action.goToTypeDefinition')<CR>", { noremap = true, silent = true })   
   vim.api.nvim_set_keymap('n', 'gO', ":call VSCodeNotify('workbench.action.quickOpen')<CR>", { noremap = true, silent = true })    
   vim.api.nvim_set_keymap('n', 'go', ":call VSCodeNotify('workbench.action.gotoSymbol')<CR>", { noremap = true, silent = true }) 
-  -- 选项设置
+  vim.api.nvim_set_keymap('n', 'H', ":call VSCodeNotify('workbench.action.nextEditor')<CR>", { noremap = true, silent = true }) 
+   vim.api.nvim_set_keymap('n', 'L', ":call VSCodeNotify('workbench.action.previousEditor')<CR>", { noremap = true, silent = true }) 
+   -- 选项设置workbench.action.gotoSymbolworkbench.action.gotoSymbol
 vim.opt.ignorecase = true    
 vim.opt.smartcase = true     
 vim.opt.scrolloff = 5 -- 将值设置为您想要的数字
@@ -26,6 +28,8 @@ local opts = { noremap = true, silent = true }
 -- vim.keymap.set('n', 'J', '<Nop>', opts)
 
 if vim.g.vscode then
+    -- vim.keymap.set('n', 'L', vsc('workbench.action.nextEditor'))
+    -- vim.keymap.set('n', 'H', vsc('workbench.action.previousEditor'))  
     -- 定义快捷键 'vv' 快速触发 VSCode 的智能扩展选中
     vim.keymap.set('n', 'vv', [[<Cmd>call VSCodeNotify('editor.action.smartSelect.expand')<CR>]], { silent = true })
     vim.keymap.set('v', 'vv', [[<Cmd>call VSCodeNotify('editor.action.smartSelect.expand')<CR>]], { silent = true })
