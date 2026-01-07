@@ -12,8 +12,8 @@ local is_vscode = vim.g.vscode ~= nil
   vim.api.nvim_set_keymap('n', 'gtd', ":call VSCodeNotify('editor.action.goToTypeDefinition')<CR>", { noremap = true, silent = true })   
   vim.api.nvim_set_keymap('n', 'gO', ":call VSCodeNotify('workbench.action.quickOpen')<CR>", { noremap = true, silent = true })    
   vim.api.nvim_set_keymap('n', 'go', ":call VSCodeNotify('workbench.action.gotoSymbol')<CR>", { noremap = true, silent = true }) 
-  vim.api.nvim_set_keymap('n', 'H', ":call VSCodeNotify('workbench.action.nextEditor')<CR>", { noremap = true, silent = true }) 
-   vim.api.nvim_set_keymap('n', 'L', ":call VSCodeNotify('workbench.action.previousEditor')<CR>", { noremap = true, silent = true }) 
+  vim.api.nvim_set_keymap('n', 'L', ":call VSCodeNotify('workbench.action.nextEditor')<CR>", { noremap = true, silent = true }) 
+   vim.api.nvim_set_keymap('n', 'H', ":call VSCodeNotify('workbench.action.previousEditor')<CR>", { noremap = true, silent = true }) 
    -- 选项设置workbench.action.gotoSymbolworkbench.action.gotoSymbol
 vim.opt.ignorecase = true    
 vim.opt.smartcase = true     
